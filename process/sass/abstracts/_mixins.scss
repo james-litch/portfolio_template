@@ -1,0 +1,31 @@
+@mixin easeOut {
+    transition: all ease-in-out 0.5s;
+}
+
+@mixin respond-below($breakpoint) {
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Get the breakpoint value.
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+        // Write the media query.
+        @media (max-width: ($breakpoint-value - 1)) {
+            @content;
+        }
+        // If the breakpoint doesn't exist in the map.
+    }
+    @else {
+        // Log a warning.
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin hover-background($color) {
+    &:hover {
+        background-color: $color;
+    }
+}

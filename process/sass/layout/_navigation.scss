@@ -1,0 +1,61 @@
+$navbar-height: 60px;
+$navbar-color: black;
+$navbar-font-size: 20px;
+$hover-color: rgba(255, 255, 255, 0.15);
+.navbar {
+    position: fixed;
+    @include size(100%, $navbar-height);
+    background-color: $navbar-color;
+    align-items: center;
+    font-size: $navbar-font-size;
+    display: grid;
+    grid-template-areas: "navbar-brand navbar-links";
+    .navbar-brand {
+        grid-area: navbar-brand;
+        margin-left: 20px;
+    }
+    ul {
+        grid-area: navbar-links;
+        justify-self: end;
+        li {
+            display: inline-block;
+            a {
+                padding: 18px 20px;
+                @include hover-background($hover-color);
+            }
+        }
+    }
+    .hamburger-icon {
+        grid-area: hamburger-icon;
+        display: none;
+    }
+    @include respond-below('small') {
+        grid-template-areas: "navbar-brand hamburger-icon" "navbar-links navbar-links";
+        grid-template-rows: $navbar-height auto;
+        ul {
+            top: 0;
+            padding: 0;
+            @include size(100%, auto);
+            max-height: 0;
+            overflow: hidden;
+            position: absolute;
+            justify-items: center;
+            @include easeOut;
+            background-color: rgba(0, 0, 0, 0.9);
+            li,
+            li a {
+                display: block;
+                text-align: center;
+                width: 100%
+            }
+            &.open {
+                max-height: 100vh;
+            }
+        }
+        .hamburger-icon {
+            justify-self: end;
+            margin-right: 20px;
+            display: block;
+        }
+    }
+}

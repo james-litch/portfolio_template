@@ -1,0 +1,20 @@
+$home-image: url(../img/home-img.jpg);
+main {
+    padding: 4rem;
+    height: 100vh;
+    .icons {
+        margin: 1rem 0;
+        a {
+            padding: 0.4rem;
+            &:hover {
+                color: $secondary-color;
+                @include easeOut;
+            }
+        }
+    }
+    &.home {
+        h1 {
+            margin-top: 20vh;
+        }
+    }
+}

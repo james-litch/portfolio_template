@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Text|Roboto:400,700&display=swap');
+//breakpoints 
+$breakpoints: ( 'small' : 600px,
+'medium' : 992px,
+'large' : 1200px) !default;
+// colours
+$primary-color: #444;
+$secondary-color: #eece1a;
+// fonts 
+$font-main: 'Roboto',
+sans-serif;
