@@ -4,6 +4,7 @@ $navbar-font-size: 20px;
 $hover-color: rgba(255, 255, 255, 0.15);
 .navbar {
     position: fixed;
+    top: 0;
     @include size(100%, $navbar-height);
     background-color: $navbar-color;
     align-items: center;
