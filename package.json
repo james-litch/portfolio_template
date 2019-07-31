@@ -6,7 +6,7 @@
     "homepage": "https://james-litch.github.io/portfolio",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "deploy": "gh-pages -d builds"
+        "deploy": "gh-pages -d builds/portfolio"
     },
     "author": "James Litchfield",
     "license": "MIT",
